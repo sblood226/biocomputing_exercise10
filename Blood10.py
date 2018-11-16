@@ -59,7 +59,8 @@ N0=[0.1,0.11]
 params = (0.1,0.1,2,1,1,2)
 modelSim=spint.odeint(func=paperSim,y0=N0,t=times,args=params)
 simDF=df.DataFrame({"t":times,"normal":modelSim[:,0],"tumor":modelSim[:,1]})
-ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case1= ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case1.draw()
 
 ### Case 2 alpha12>alpha11 and alpha22>alpha21
 N0=[0.1,0.11]
@@ -67,7 +68,8 @@ N0=[0.1,0.11]
 params = (0.1,0.1,1,2,1,2)
 modelSim=spint.odeint(func=paperSim,y0=N0,t=times,args=params)
 simDF=df.DataFrame({"t":times,"normal":modelSim[:,0],"tumor":modelSim[:,1]})
-ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case2=ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case2.draw()
 
 ### Case3 alpha12<alpha11 and alpha22<alpha21
 N0=[0.1,0.11]
@@ -75,7 +77,8 @@ N0=[0.1,0.11]
 params = (0.1,0.1,2,1,2,1)
 modelSim=spint.odeint(func=paperSim,y0=N0,t=times,args=params)
 simDF=df.DataFrame({"t":times,"normal":modelSim[:,0],"tumor":modelSim[:,1]})
-ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case3=ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case3.draw()
 
 ### Case 4 alpha11=alpha12 and alpha22=alpha21
 N0=[0.1,0.11]
@@ -83,7 +86,8 @@ N0=[0.1,0.11]
 params = (0.1,0.1,2,1,1,2)
 modelSim=spint.odeint(func=paperSim,y0=N0,t=times,args=params)
 simDF=df.DataFrame({"t":times,"normal":modelSim[:,0],"tumor":modelSim[:,1]})
-ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case4=ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case4.draw()
 
 ### Case 5 alpha12>alpha11 and alpha22<alpha21
 N0=[0.1,0.11]
@@ -91,4 +95,5 @@ N0=[0.1,0.11]
 params = (0.1,0.1,1,2,2,1)
 modelSim=spint.odeint(func=paperSim,y0=N0,t=times,args=params)
 simDF=df.DataFrame({"t":times,"normal":modelSim[:,0],"tumor":modelSim[:,1]})
-ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case5=ggplot(simDF,aes(x="t",y="normal"))+geom_line()+geom_line(simDF,aes(x="t",y="tumor"),color='red')+theme_classic()
+case5.draw()
